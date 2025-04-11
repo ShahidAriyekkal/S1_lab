@@ -1,0 +1,40 @@
+<html>
+<head>
+  <title>Calendar</title>
+  <style>
+    table { border-collapse: collapse; margin: 20px; }
+    th, td { border: 1px solid #000; padding: 5px; text-align: center; }
+    th { background-color: #f2f2f2; }
+  </style>
+</head>
+<body>
+  <h1>Calendar</h1>
+  <input type="number" id="yr" placeholder="Enter Year">
+  <button onclick="genCal()">Generate</button>
+  <div id="cal"></div>
+
+  <script>
+    function genCal() {
+      const yr = document.getElementById('yr').value;
+      if (!yr) return alert("Enter a valid year");
+
+      const mnths = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", 
+                     "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+      const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+      const calDiv = document.getElementById("cal");
+      calDiv.innerHTML = ""; // Clear previous content
+
+      mnths.forEach((m, i) => {
+        const firstDay = new Date(yr, i, 1).getDay();
+        const daysInMnth = new Date(yr, i + 1, 0).getDate();
+
+        let tbl = `<table><caption>${m} ${yr}</caption><tr>${days.map(d => `<th>${d}</th>`).join('')}</tr>`;
+        let cells = [...Array(firstDay).fill('<td></td>'), ...Array(daysInMnth).fill().map((_, d) => `<td>${d + 1}</td>`)];
+        
+        while (cells.length) tbl += `<tr>${cells.splice(0, 7).join('')}</tr>`;
+        calDiv.innerHTML += tbl + "</table>";
+      });
+    }
+  </script>
+</body>
+</html>
