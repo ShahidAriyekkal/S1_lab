@@ -1,0 +1,16 @@
+<html>
+<body>
+<h1 id="txt">IMAGE</h1><br><br>
+<img id="img1"onmouseover="myfunction1()"onmouseout="myfunction2()"src="https://gratisography.com/wp-content/uploads/2024/10/gratisography-foliage-face-800x525.jpg" height="40%" width="30%" id="image" ">
+<script>
+function myfunction1(){
+document.getElementById("img1").src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-C_UAhXq9GfuGO452EEzfbKnh1viQB9EDBQ&s";
+document.getElementById("txt").innerHTML="IMAGE 1";
+}
+function myfunction2(){
+document.getElementById("img1").src="https://gratisography.com/wp-content/uploads/2024/10/gratisography-birthday-dog-sunglasses-800x525.jpg";
+document.getElementById("txt").innerHTML="IMAGE 2";
+}
+</script>
+</body>
+</html>

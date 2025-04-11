@@ -1,0 +1,83 @@
+<html>
+<body >
+<h1>MCA ADMISSION ENTRANCE</h1>
+<form name="exm" >
+<h2>Enter Name:</h2>
+<input type="text">
+<h2>Date of Birth:</h2>
+<input type="date">
+<h2>Enter Register Number:</h2>
+<input type="text" name="reg" id="reg" >
+<h3>Q1. Full form of html?</td><br>
+<h4>a. Hyper Text Markup Link</h3><input type="radio" name="q1" value="q1a" id="q1">
+<h4>b. Hyper Text Main Language</h4><input type="radio" name="q1" value="q1b" id="q1">
+<h4>c. Hyper Text Markup Language</h4><input type="radio" name="q1" value="q1c" id="q1">
+<h4>d. Hyper Text Multiple Link</h4><input type="radio" name="q1" value="q1d" id="q1">
+<br><br>
+<h3>Q2. 1 Byte=?</h3>
+<h4>a. 16 bits</h4><input type="radio" name="q2" value="q2a" id="q2">
+<h4>b. 8 bits</h4><input type="radio" name="q2" value="q2b" id="q2">
+<h4>c. 10 bits</h4><input type="radio" name="q2" value="q2c" id="q2">
+<h4>d. 32 bits</h4><input type="radio" name="q2" value="q2d" id="q2">
+<br><br>
+<h3>Q3. Select the input device?</h3>
+<h4>a. Keyboard</h4><input type="radio" name="q3" value="q3a" id="q3">
+<h4>b. Printer</h4><input type="radio" name="q3" value="q3b" id="q3">
+<h4>c. Monitor</h4><input type="radio" name="q3" value="q3c" id="q3">
+<h4>d. Speaker</h4><input type="radio" name="q3" value="q3d" id="q3">
+<br><br>
+<h3>Q4. C is invented by?</h3>
+<h4>a.Rasmus Ledorf</h4><input type="radio" name="q4" value="q4a" id="q4">
+<h4>b. Alan Turing</h4><input type="radio" name="q4" value="q4b" id="q4">
+<h4>c. Dennis Richie</h4><input type="radio" name="q4" value="q4c" id="q4">
+<h4>d. James Gosling</h4><input type="radio" name="q4" value="q4d" id="q4">
+<br><br>
+<h3>Q5. Select non linear data structure?</h3>
+<h4>a. Stack</h4><input type="radio" name="q5" value="q5a" id="q5">
+<h4>b. Queue</h4><input type="radio" name="q5" value="q5b" id="q5">
+<h4>c. Array</h4><input type="radio" name="q5" value="q5c" id="q5">
+<h4>d. Tree</h4><input type="radio" name="q5" value="q5d" id="q5"><br><br>
+<input type="button" onclick="marks();" VALUE="SUBMIT"></INPUT>
+</form>
+
+<script type="text/javascript">
+
+function marks()
+{
+var a=document.exm.q1.value;
+var b=document.exm.q2.value;
+var c=document.exm.q3.value;
+var d=document.exm.q4.value;
+var e=document.exm.q5.value;
+
+var m=0;
+
+if(a=="q1c")
+{
+m=m+1;
+}
+if(b=="q2b")
+{
+m=m+1;
+}
+if(c=="q3a")
+{
+m=m+1;
+}
+if(d=="q4c")
+{
+m=m+1;
+}
+if(e=="q5d")
+{
+m=m+1;
+}
+
+alert("You have got "+m+" marks");
+
+
+
+}
+</script>
+</body>
+</html>

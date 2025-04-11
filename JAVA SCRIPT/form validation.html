@@ -1,0 +1,113 @@
+<html>
+<head>
+<title>Form Validation</title>
+</head>
+<body align="center">
+<h2><u>FORM VALIDATION</u></h2>
+<form name="form" action="a.html" method="POST" onsubmit="return validateForm()">
+<p>Name : <input type="text" name="Name"> <br><br>
+<p>Email: <input type="text" name="mail"> <br><br>
+<p>Mob NO : <input type="tel" name="mob"> <br><br>
+<p>Username : <input type="text" name="user"> <br><br>
+<p>Password : <input type="password" name="passcode"> <br><br>
+<p>Confirm Password : <input type="password" name="cpasscode"> <br><br>
+<input type="submit" value="submit">
+<input type="reset" value="reset">
+</form>
+
+
+<script>
+function validateForm()
+{
+var nm = document.form.Name.value;
+var email = document.form.mail.value;
+var at=email.indexOf("@");
+var dot=email.lastIndexOf(".");
+var mob = document.form.mob.value;
+var user = document.form.user.value;
+var passcode = document.form.passcode.value;
+var cpasscode = document.form.cpasscode.value;
+
+
+if (nm == "")
+{
+alert("Enter Name !!");
+document.form.Name.focus();
+return false;
+}
+
+
+if (email == "")
+{
+alert("Enter Email ID");
+document.form.mail.focus();
+return false;
+}
+else if (at<1 || dot<at+2 || dot+2>=email.length)
+{
+alert( "Please enter a valid e-mail address.");
+document.form.mail.focus();
+return false;
+}
+
+
+
+if (mob == "")
+{
+alert("Enter Mobile number");
+document.form.mob.focus();
+return false;
+}
+else if (isNaN(mob))
+{
+alert("Enter valid Mobile number");
+document.form.mob.focus();
+return false;
+}
+else if (mob.length != 10)
+{
+alert("Enter Mobile number with 10 digit");
+document.form.mob.focus();
+return false;
+}
+
+
+if (user == "")
+{
+alert("Enter User Name !!");
+document.form.user.focus();
+return false;
+}
+
+
+if (passcode == "")
+{
+alert("Enter the Password !!");
+document.form.passcode.focus();
+return false;
+}
+else if(passcode.length < 6)
+{
+alert("Enter minimum 6 digit Password !!");
+document.form.passcode.focus();
+return false;
+}
+
+
+if (cpasscode == "")
+{
+alert("Confirm the Password !!");
+document.form.cpasscode.focus();
+return false;
+}
+else if (cpasscode!=passcode)
+{
+alert("Password must be same");
+document.form.cpasscode.focus();
+return false;
+}
+}
+
+</script>
+</body>
+</html>
